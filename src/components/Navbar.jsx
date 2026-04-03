@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ArrowRight } from 'lucide-react'
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -77,26 +77,25 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* ── CTA — liquid glass with accent tint ── */}
+        {/* ── CTA — mismo lenguaje que el botón principal del hero ── */}
         <div className="hidden md:flex items-center gap-3">
           <motion.a
             href="#contacto"
-            whileHover={{ scale: 1.03, filter: 'brightness(1.12)' }}
+            whileHover={{ scale: 1.04, boxShadow: '0 0 44px rgba(237,73,47,0.55)' }}
             whileTap={{ scale: 0.97 }}
-            className="relative overflow-hidden text-sm font-semibold px-5 py-2.5 rounded-2xl
-              text-white
-              bg-brand-accent/[0.82] backdrop-blur-xl
-              border border-t-white/[0.35] border-brand-accent/[0.55]
-              shadow-[inset_0_1px_0_rgba(255,255,255,0.38),0_4px_24px_rgba(237,73,47,0.38)]
-              transition-all duration-200"
+            className="relative flex items-center gap-2 overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-bold text-white shrink-0"
+            style={{
+              background: 'linear-gradient(135deg, #ED492F 0%, #c73520 60%, #9b2615 100%)',
+              boxShadow: '0 8px 32px -8px rgba(237,73,47,0.5), inset 0 1px 0 rgba(255,255,255,0.18)',
+            }}
           >
-            {/* Top specular edge */}
-            <span className="pointer-events-none absolute inset-x-0 top-0 h-px
-              bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-            {/* Inner glass gradient sheen */}
-            <span className="pointer-events-none absolute inset-0
-              bg-gradient-to-b from-white/[0.18] via-transparent to-black/[0.08]" />
+            <motion.span
+              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+              animate={{ x: ['-100%', '220%'] }}
+              transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 2.0, ease: 'easeInOut' }}
+            />
             <span className="relative">Hablar con el equipo</span>
+            <ArrowRight size={16} className="relative shrink-0" />
           </motion.a>
         </div>
 
@@ -129,20 +128,24 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
+              <motion.a
                 href="#contacto"
                 onClick={() => setMenuOpen(false)}
-                className="relative overflow-hidden mt-2 text-sm font-semibold px-5 py-3 rounded-2xl text-center
-                  text-white bg-brand-accent/[0.85] backdrop-blur-xl
-                  border border-t-white/[0.30] border-brand-accent/50
-                  shadow-[inset_0_1px_0_rgba(255,255,255,0.32),0_4px_20px_rgba(237,73,47,0.30)]"
+                whileTap={{ scale: 0.98 }}
+                className="relative flex items-center justify-center gap-2 overflow-hidden mt-2 text-sm font-bold px-5 py-3 rounded-2xl text-white"
+                style={{
+                  background: 'linear-gradient(135deg, #ED492F 0%, #c73520 60%, #9b2615 100%)',
+                  boxShadow: '0 8px 32px -8px rgba(237,73,47,0.5), inset 0 1px 0 rgba(255,255,255,0.18)',
+                }}
               >
-                <span className="pointer-events-none absolute inset-x-0 top-0 h-px
-                  bg-gradient-to-r from-transparent via-white/55 to-transparent" />
-                <span className="pointer-events-none absolute inset-0
-                  bg-gradient-to-b from-white/[0.15] via-transparent to-black/[0.06]" />
+                <motion.span
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+                  animate={{ x: ['-100%', '220%'] }}
+                  transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 2.0, ease: 'easeInOut' }}
+                />
                 <span className="relative">Hablar con el equipo</span>
-              </a>
+                <ArrowRight size={16} className="relative shrink-0" />
+              </motion.a>
             </div>
           </motion.div>
         )}
