@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
-export default function CTASection() {
+export default function CTASection({ onOpenContactForm }) {
   return (
     <section
       id="contacto"
@@ -65,7 +65,12 @@ export default function CTASection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="mailto:hola@kondor.dev"
+            href="mailto:kondorcorporate@gmail.com"
+            onClick={(event) => {
+              if (!onOpenContactForm) return
+              event.preventDefault()
+              onOpenContactForm()
+            }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2.5 bg-brand-accent text-white font-bold text-base px-9 py-4 rounded-2xl shadow-xl shadow-brand-accent/35 hover:brightness-110 transition-all duration-200"

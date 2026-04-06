@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Contacto', href: '#contacto' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onOpenContactForm }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -81,6 +81,11 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <motion.a
             href="#contacto"
+            onClick={(event) => {
+              if (!onOpenContactForm) return
+              event.preventDefault()
+              onOpenContactForm()
+            }}
             whileHover={{ scale: 1.04, boxShadow: '0 0 44px rgba(237,73,47,0.55)' }}
             whileTap={{ scale: 0.97 }}
             className="relative flex items-center gap-2 overflow-hidden rounded-2xl px-5 py-2.5 text-sm font-bold text-white shrink-0"
@@ -130,7 +135,12 @@ export default function Navbar() {
               ))}
               <motion.a
                 href="#contacto"
-                onClick={() => setMenuOpen(false)}
+                onClick={(event) => {
+                  setMenuOpen(false)
+                  if (!onOpenContactForm) return
+                  event.preventDefault()
+                  onOpenContactForm()
+                }}
                 whileTap={{ scale: 0.98 }}
                 className="relative flex items-center justify-center gap-2 overflow-hidden mt-2 text-sm font-bold px-5 py-3 rounded-2xl text-white"
                 style={{

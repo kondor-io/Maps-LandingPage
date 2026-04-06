@@ -5,23 +5,17 @@ const pillars = [
   {
     icon: Cpu,
     title: 'Ingeniería de criterio',
-    body: 'Cada sistema se diseña y construye con buenas prácticas, sin atajos. Aplicamos estándares de ingeniería reales en cada capa del producto.',
     n: '01',
-    accent: false,
   },
   {
     icon: Layers,
     title: 'Marca madre',
-    body: 'Kondor es la empresa detrás de distintos productos y verticales. No somos un solo producto: somos la plataforma que los hace posibles.',
     n: '02',
-    accent: true,
   },
   {
     icon: TrendingUp,
     title: 'Evolución continua',
-    body: 'Acompañamos a las organizaciones en su transformación tecnológica para que puedan operar con el nivel de una gran corporación.',
     n: '03',
-    accent: false,
   },
 ]
 
@@ -108,27 +102,17 @@ export default function VisionSection() {
                   Somos cuatro personas con criterio técnico claro. Creamos sistemas para que las
                   medianas organizaciones puedan operar como grandes corporaciones.
                 </p>
-                <motion.div
-                  className="inline-flex w-fit max-w-full items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 text-[11px] font-mono text-white/45 tracking-wider lg:self-end"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.35 }}
-                >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent shadow-[0_0_8px_#ED492F] animate-pulse" />
-                  COORD · DIRECTO AL IMPACTO OPERATIVO
-                </motion.div>
               </div>
             </div>
           </motion.div>
 
-          {/* Tres pilares — fila horizontal; cada uno es fila órbita + texto */}
+          {/* Tres focos — versión dinámica, icono + título */}
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-40px' }}
-            className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-white/10"
+            className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10"
           >
             {pillars.map((pillar) => {
               const Icon = pillar.icon
@@ -136,92 +120,53 @@ export default function VisionSection() {
                 <motion.article
                   key={pillar.title}
                   variants={item}
-                  whileHover={{ y: -2 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                  className={`group relative flex flex-row items-start gap-4 px-0 md:px-6 lg:gap-5 lg:px-8 first:md:pl-0 last:md:pr-0 ${
-                    pillar.accent ? 'md:rounded-2xl md:bg-brand-accent/[0.06] md:ring-1 md:ring-brand-accent/25' : ''
-                  }`}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 24 }}
+                  className="group relative flex min-h-[92px] items-center gap-4 border-l border-white/12 pl-5 md:border-l-0 md:pl-0 md:pt-2"
                 >
                   <div
-                    className={`pointer-events-none absolute rounded-full blur-2xl transition-opacity group-hover:opacity-80 ${
-                      pillar.accent ? 'left-1/2 top-0 h-32 w-32 -translate-x-1/2 bg-brand-accent/20' : '-left-4 top-6 h-28 w-28 bg-white/[0.06]'
-                    }`}
+                    className="pointer-events-none absolute left-3 top-1/2 h-16 w-16 -translate-y-1/2 rounded-full bg-brand-accent/20 blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    aria-hidden
+                  />
+                  <motion.span
+                    className="pointer-events-none absolute bottom-0 left-5 right-0 h-px bg-gradient-to-r from-brand-accent/70 via-brand-accent/20 to-transparent"
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileInView={{ scaleX: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55, delay: 0.1 }}
+                    style={{ transformOrigin: 'left' }}
                     aria-hidden
                   />
 
-                  {/* Órbita compacta — siempre a la izquierda del texto (horizontal) */}
-                  <div className="relative z-[1] shrink-0">
-                    <div className="relative h-[4.5rem] w-[4.5rem] sm:h-20 sm:w-20">
-                      <div
-                        className={`absolute inset-0 rounded-full border ${
-                          pillar.accent
-                            ? 'border-brand-accent/45 shadow-[0_0_28px_-6px_rgba(237,73,47,0.4)]'
-                            : 'border-white/12'
-                        }`}
-                      />
-                      <motion.div
-                        className="absolute inset-[4px] rounded-full border border-dashed border-white/18"
-                        style={{ borderColor: pillar.accent ? 'rgba(237,73,47,0.32)' : undefined }}
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div
-                          className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br sm:h-12 sm:w-12 ${
-                            pillar.accent
-                              ? 'from-brand-accent/30 to-brand-accent/5 text-brand-accent ring-2 ring-brand-accent/35'
-                              : 'from-white/14 to-white/[0.02] text-white ring-1 ring-white/12 group-hover:ring-brand-accent/30'
-                          }`}
-                        >
-                          <Icon size={20} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap font-mono text-[9px] tracking-[0.2em] text-brand-accent/70">
-                        {pillar.n}
-                      </span>
+                  <div className="relative z-[1] flex h-12 w-12 shrink-0 items-center justify-center">
+                    <motion.span
+                      className="absolute inset-0 rounded-full border border-brand-accent/35"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                      aria-hidden
+                    />
+                    <motion.span
+                      className="absolute inset-[6px] rounded-full border border-dashed border-white/20"
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
+                      aria-hidden
+                    />
+                    <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#26262f] text-white/90 ring-1 ring-white/10 transition-colors group-hover:text-brand-accent group-hover:ring-brand-accent/35">
+                      <Icon size={16} strokeWidth={1.8} />
                     </div>
                   </div>
 
-                  <div className="relative z-[1] min-w-0 flex-1 pt-0.5">
-                    <p className="mb-1 text-[9px] font-mono uppercase tracking-[0.2em] text-white/35">Pilar</p>
-                    <h3 className="text-base font-bold tracking-tight text-white sm:text-lg">{pillar.title}</h3>
-                    <p className="mt-2 text-xs leading-relaxed text-white/52 sm:text-sm [text-wrap:pretty]">
-                      {pillar.body}
-                    </p>
-                    <div className="mt-4 flex gap-1.5" aria-hidden>
-                      <span className="h-1 w-1 rounded-full bg-brand-accent/55" />
-                      <span className="h-1 w-1 rounded-full bg-white/18" />
-                      <span className="h-1 w-1 rounded-full bg-white/18" />
-                    </div>
+                  <div className="relative z-[1] min-w-0 flex-1">
+                    <p className="mb-1 font-mono text-[10px] tracking-[0.2em] text-brand-accent/75">{pillar.n}</p>
+                    <h3 className="text-base font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-accent sm:text-lg">
+                      {pillar.title}
+                    </h3>
                   </div>
                 </motion.article>
               )
             })}
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15, duration: 0.55 }}
-          className="mt-12 lg:mt-14 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-full border border-white/10 bg-white/[0.05] px-6 py-4 sm:px-10 sm:py-5"
-        >
-          <p className="text-xs sm:text-sm text-white/48 max-w-xl leading-relaxed">
-            Nuestro foco inicial son las agencias de productores de seguros, pero nuestra visión es
-            más amplia: cualquier organización que quiera dar el salto tecnológico.
-          </p>
-          <motion.a
-            href="#portfolio"
-            whileHover={{ x: 3 }}
-            className="shrink-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-accent hover:text-white transition-colors"
-          >
-            Ver sistemas
-            <span aria-hidden className="text-base leading-none">
-              →
-            </span>
-          </motion.a>
-        </motion.div>
       </div>
     </section>
   )
