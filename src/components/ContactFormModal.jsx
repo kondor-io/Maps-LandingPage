@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X, Send } from 'lucide-react'
 
-const DEFAULT_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xblovokz'
+const DEFAULT_FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzvdypk'
 
 export default function ContactFormModal({ open, onClose }) {
   const [form, setForm] = useState({
