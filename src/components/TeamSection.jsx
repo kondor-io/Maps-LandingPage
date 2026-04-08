@@ -4,10 +4,6 @@ import { Linkedin, Github, Twitter, Instagram, Mail, Globe, X } from 'lucide-rea
 
 const SOCIAL_ICON = {
   linkedin: Linkedin,
-  github: Github,
-  twitter: Twitter,
-  x: Twitter,
-  instagram: Instagram,
   mail: Mail,
   web: Globe,
 }
@@ -23,8 +19,7 @@ const TEAM = [
     img: '/lucas.jpg',
     bio: 'Ingeniero enfocado en producto y arquitectura. Impulsa decisiones técnicas que escalan sin perder velocidad.',
     socials: [
-      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/' },
-      { kind: 'github', label: 'GitHub', href: 'https://github.com/' },
+      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/legorburulucas/' },
     ],
   },
   {
@@ -34,8 +29,7 @@ const TEAM = [
     img: '/joaco.jfif',
     bio: 'Combina visión de negocio y ejecución. Convierte ideas ambiciosas en entregables concretos.',
     socials: [
-      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/' },
-      { kind: 'twitter', label: 'X', href: 'https://x.com/' },
+      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/joaquin-e-rodriguez/' },
     ],
   },
   {
@@ -45,8 +39,7 @@ const TEAM = [
     img: '/Nico.jfif',
     bio: 'Apasionado por la calidad y la experiencia. Diseña flujos que la gente realmente usa.',
     socials: [
-      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/' },
-      { kind: 'instagram', label: 'Instagram', href: 'https://instagram.com/' },
+      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/nicolas-agustin-perez-441335272/' },
     ],
   },
   {
@@ -56,8 +49,7 @@ const TEAM = [
     img: '/santi.jfif',
     bio: 'Operación y crecimiento. Asegura que cada sprint deje valor medible en producción.',
     socials: [
-      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/' },
-      { kind: 'mail', label: 'Email', href: 'mailto:hola@ejemplo.com' },
+      { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/santiago-talavera/' },
     ],
   },
 ]

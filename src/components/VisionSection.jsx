@@ -3,7 +3,7 @@ import { Layers, Cpu, TrendingUp, Network, Crosshair } from 'lucide-react'
 
 const pillars = [
   { icon: Cpu, title: 'Ingeniería de criterio' },
-  { icon: Layers, title: 'Marca madre' },
+  { icon: Layers, title: 'Arquitectura escalable' },
   { icon: TrendingUp, title: 'Evolución continua' },
   { icon: Network, title: 'Ecosistema integrado' },
 ]
@@ -114,8 +114,9 @@ export default function VisionSection() {
                 variants={fadeUpShort}
                 className="max-w-md shrink-0 text-base leading-relaxed text-white/[0.52] lg:max-w-sm lg:text-right lg:text-[1.05rem] lg:leading-relaxed"
               >
-                Somos cuatro personas con criterio técnico claro. Creamos sistemas para que las medianas
-                organizaciones puedan operar como grandes corporaciones.
+                Diseñamos sistemas para que empresas en crecimiento puedan operar con la claridad,
+                estructura y disciplina tecnológica que antes parecía reservada para organizaciones mucho más grandes.
+
               </motion.p>
             </div>
           </motion.div>

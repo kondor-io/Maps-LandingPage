@@ -2,7 +2,6 @@ import { Mail, ArrowUpRight, Instagram, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Inicio',     href: '#inicio' },
   { label: 'Visión',     href: '#vision' },
   { label: 'Portfolio',  href: '#portfolio' },
   { label: 'Contacto',   href: '#contacto' },
@@ -88,8 +87,7 @@ export default function Footer() {
                 className="h-8 w-auto max-w-[9.5rem] object-contain object-left opacity-95"
               />
               <p className="text-sm text-white/50 leading-relaxed max-w-xs">
-                Orquestamos la evolución industrial sincronizando el instinto
-                humano con la exactitud digital.
+                Software, sistemas e ingenieria aplicada para organizaciones que quieren operar mejor
               </p>
 
               {/* Email */}
@@ -159,7 +157,7 @@ export default function Footer() {
                   bg-gradient-to-r from-transparent via-white/55 to-transparent" />
                 <span className="pointer-events-none absolute inset-0
                   bg-gradient-to-b from-white/[0.12] via-transparent to-black/[0.06]" />
-                <span className="relative">Elevar mi organización</span>
+                <span className="relative">Hablar con el equipo</span>
                 <ArrowUpRight size={14} className="relative" />
               </motion.a>
             </div>

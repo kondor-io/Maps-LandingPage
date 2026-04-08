@@ -5,22 +5,23 @@ const blocks = [
   {
     Icon:  Compass,
     title: 'Quiénes somos',
-    body:  'Una arquitectura de pensamiento digital diseñada para la anticipación absoluta.',
+    body:  'Somos una software factory que diseña y construye sistemas digitales para acompañar la evolución tecnológica de empresas en crecimiento.',
     accent: false,
   },
   {
     Icon:  Zap,
-    title: 'Qué hacemos',
-    body:  'Decodificamos la complejidad para devolver simplicidad operativa y autonomía total.',
+    title: 'Cómo trabajamos',
+    body:  'Combinamos visión de producto, criterio técnico y buenas prácticas de ingeniería para construir soluciones claras, seguras y escalables.',
     accent: true,
   },
   {
     Icon:  Target,
-    title: 'Qué obtienes',
-    body:  'Sistemas que aprenden y procesos que se superan a sí mismos por diseño.',
+    title: 'Qué buscamos lograr',
+    body:  'Ayudamos a que organizaciones pequeñas y medianas operen con más estructura, visibilidad y capacidad de crecimiento.',
     accent: false,
   },
 ]
+
 
 const containerVariants = {
   hidden: {},
@@ -53,9 +54,9 @@ export default function AboutSection() {
             Nuestra identidad
           </span>
           <h2 className="text-3xl lg:text-4xl font-black text-white tracking-tight text-balance leading-tight">
-            Más que una empresa de software,
+            Construimos con criterio,
             <br className="hidden md:block" />
-            <span className="text-brand-accent"> un ecosistema de criterio.</span>
+            <span className="text-brand-accent"> no por improvisacion.</span>
           </h2>
         </motion.div>
 
