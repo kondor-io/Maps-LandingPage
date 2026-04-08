@@ -16,9 +16,9 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.70, ease: 'easeOut' }}
+        transition={{ duration: 0.45, ease: 'easeOut' }}
       >
         <Navbar onOpenContactForm={() => setIsContactFormOpen(true)} />
         <main>
