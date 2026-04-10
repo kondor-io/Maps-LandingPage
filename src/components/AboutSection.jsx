@@ -35,7 +35,7 @@ const cardVariants = {
 
 export default function AboutSection() {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section id="nosotros" className="relative py-20 lg:py-28 overflow-hidden">
       {/* Top edge line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
 

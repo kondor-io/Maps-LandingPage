@@ -9,9 +9,11 @@ import CTASection from './components/CTASection'
 import TeamSection from './components/TeamSection'
 import Footer from './components/Footer'
 import ContactFormModal from './components/ContactFormModal'
+import LegalModal from './components/LegalModal'
 
 export default function App() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false)
+  const [legalType, setLegalType] = useState(null)
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -29,8 +31,9 @@ export default function App() {
           <TeamSection />
           <CTASection onOpenContactForm={() => setIsContactFormOpen(true)} />
         </main>
-        <Footer />
+        <Footer onOpenLegal={(type) => setLegalType(type)} />
         <ContactFormModal open={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
+        <LegalModal type={legalType} onClose={() => setLegalType(null)} />
       </motion.div>
     </div>
   )

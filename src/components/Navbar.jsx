@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowRight } from 'lucide-react'
 
 const navLinks = [
+  { label: 'Nosotros', href: '#nosotros' },
   { label: 'Visión', href: '#vision' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Contacto', href: '#contacto' },
@@ -29,8 +30,8 @@ export default function Navbar({ onOpenContactForm }) {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between gap-3 lg:gap-5 h-16 lg:h-[4.25rem]">
         <a href="#inicio" className="group z-[2] shrink-0 py-1 transition-opacity hover:opacity-95">
           <img
-            src="/kondor.png"
-            alt="Kondor"
+            src="/kondor.webp"
+            alt="Kondor — Software Factory"
             className="h-7 md:h-8 w-auto max-w-[11rem] object-contain object-left [filter:drop-shadow(0_1px_2px_rgba(0,0,0,0.35))]"
           />
         </a>

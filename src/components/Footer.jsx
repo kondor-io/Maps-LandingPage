@@ -2,14 +2,15 @@ import { Mail, ArrowUpRight, Instagram, Linkedin } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const navLinks = [
+  { label: 'Nosotros',   href: '#nosotros' },
   { label: 'Visión',     href: '#vision' },
   { label: 'Portfolio',  href: '#portfolio' },
   { label: 'Contacto',   href: '#contacto' },
 ]
 
 const legalLinks = [
-  { label: 'Política de privacidad', href: '#' },
-  { label: 'Términos de uso',        href: '#' },
+  { label: 'Política de privacidad', type: 'privacidad' },
+  { label: 'Términos de uso',        type: 'terminos' },
 ]
 
 /* TikTok SVG — lucide-react doesn't include it */
@@ -65,7 +66,7 @@ function SocialBtn({ label, href, Icon }) {
   )
 }
 
-export default function Footer() {
+export default function Footer({ onOpenLegal }) {
   return (
     <footer className="relative border-t border-white/[0.08] overflow-hidden">
       {/* Atmospheric glow behind footer */}
@@ -82,8 +83,8 @@ export default function Footer() {
             {/* Brand column */}
             <div className="md:col-span-5 flex flex-col gap-5">
               <img
-                src="/kondor.png"
-                alt="Kondor"
+              src="/kondor.webp"
+              alt="Kondor — Software Factory"
                 className="h-8 w-auto max-w-[9.5rem] object-contain object-left opacity-95"
               />
               <p className="text-sm text-white/50 leading-relaxed max-w-xs">
@@ -173,13 +174,13 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-5">
               {legalLinks.map((l) => (
-                <a
+                <button
                   key={l.label}
-                  href={l.href}
+                  onClick={() => onOpenLegal?.(l.type)}
                   className="text-xs text-white/30 hover:text-white/60 transition-colors duration-200"
                 >
                   {l.label}
-                </a>
+                </button>
               ))}
             </div>
           </div>

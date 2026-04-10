@@ -2,10 +2,26 @@ import { motion } from 'framer-motion'
 import { Layers, Cpu, TrendingUp, Network, Crosshair } from 'lucide-react'
 
 const pillars = [
-  { icon: Cpu, title: 'Ingeniería de criterio' },
-  { icon: Layers, title: 'Arquitectura escalable' },
-  { icon: TrendingUp, title: 'Evolución continua' },
-  { icon: Network, title: 'Ecosistema integrado' },
+  {
+    icon: Cpu,
+    title: 'Ingeniería de criterio',
+    description: 'Tomamos decisiones técnicas basadas en evidencia, no en tendencias. Cada arquitectura refleja el problema real del negocio.',
+  },
+  {
+    icon: Layers,
+    title: 'Arquitectura escalable',
+    description: 'Diseñamos sistemas que crecen con tu organización. Modular, mantenible y preparado para los próximos años.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Evolución continua',
+    description: 'No entregamos software y desaparecemos. Acompañamos cada etapa del crecimiento con mejora iterativa.',
+  },
+  {
+    icon: Network,
+    title: 'Ecosistema integrado',
+    description: 'Conectamos todas las piezas: pagos, gestión, operación y datos en una plataforma cohesionada.',
+  },
 ]
 
 const headerContainer = {
@@ -162,6 +178,11 @@ export default function VisionSection() {
                       <h3 className="text-[1.2rem] font-bold leading-snug tracking-tight text-white sm:text-xl md:text-[1.35rem] md:leading-tight">
                         {pillar.title}
                       </h3>
+                      {pillar.description && (
+                        <p className="mt-2 text-sm leading-relaxed text-white/45">
+                          {pillar.description}
+                        </p>
+                      )}
                     </div>
                   </motion.article>
                 )

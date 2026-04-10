@@ -6,20 +6,20 @@ import { Plane, Sparkles } from 'lucide-react'
 const clients = [
   {
     name: 'Maps organización',
-    logoSrc: '/portfolio/maps.png',
-    logoAlt: 'Logo MAPS',
+    logoSrc: '/portfolio/maps.webp',
+    logoAlt: 'Logo MAPS organización',
     tagline: 'Partnership en plataforma',
   },
   {
     name: 'Club de campo La Federala',
-    logoSrc: '/portfolio/IconoLF.png',
-    logoAlt: 'Logo La Federal',
+    logoSrc: '/portfolio/IconoLF.webp',
+    logoAlt: 'Logo Club de campo La Federala',
     tagline: 'Comercialización y control',
   },
   {
     name: 'Club For Ever',
-    logoSrc: '/portfolio/forever.png',
-    logoAlt: 'Logo For Ever',
+    logoSrc: '/portfolio/forever.webp',
+    logoAlt: 'Logo Club For Ever',
     tagline: 'Pagos y gestión',
   },
 ]

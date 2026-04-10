@@ -9,7 +9,7 @@ const TEAM = [
     id: 'K-01',
     name: 'Lucas Legorburu',
     role: 'CEO & Co-Fundador',
-    img: '/lucas.jpeg',
+    img: '/lucas.webp',
     bio: 'Define la estrategia y alinea prioridades de negocio con la capacidad de ejecución del equipo',
     socials: [
       { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/legorburulucas/' },
@@ -19,7 +19,7 @@ const TEAM = [
     id: 'K-02',
     name: 'Joaquín E. Rodríguez',
     role: 'COO & Co-Fundador',
-    img: '/joaco.jfif',
+    img: '/joaco.webp',
     bio: 'Combina visión de negocio y ejecución. Convierte ideas ambiciosas en entregables concretos.',
     photoClassName: 'object-[center_18%] lg:group-hover/card:-translate-y-[6%]',
     avatarClassName: 'object-[center_28%] scale-125',
@@ -31,7 +31,7 @@ const TEAM = [
     id: 'K-03',
     name: 'Nicolás Pérez',
     role: 'CTO & Co-Fundador',
-    img: '/nicolas.png',
+    img: '/nicolas.webp',
     bio: 'Apasionado por la calidad y la experiencia. Diseña flujos que la gente realmente usa.',
     socials: [
       { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/nicolas-agustin-perez-441335272/' },
@@ -41,7 +41,7 @@ const TEAM = [
     id: 'K-04',
     name: 'Santiago Talavera',
     role: 'CMO & Co-Fundador',
-    img: '/santi.jfif',
+    img: '/santi.webp',
     bio: 'Operación y crecimiento. Hace que el mercado entienda el valor en segundos',
     socials: [
       { kind: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/santiago-talavera/' },
@@ -107,9 +107,9 @@ export default function TeamSection() {
               Kondor Team
             </span>
             <h2 className="text-3xl sm:text-[2rem] lg:text-4xl xl:text-[2.75rem] font-black text-white tracking-[-0.02em] leading-[1.08] text-balance">
-              Cuatro personas,
+              El equipo fundador
               <br />
-              <span className="text-brand-accent">una dirección.</span>
+              <span className="text-brand-accent">de Kondor.</span>
             </h2>
           </div>
         </motion.div>
@@ -154,7 +154,9 @@ export default function TeamSection() {
                     <div className="relative z-[2] block h-full min-h-0 w-full overflow-hidden bg-white/[0.04] text-left">
                       <img
                         src={img}
-                        alt=""
+                        alt={`${name}, ${role} en Kondor`}
+                        loading="lazy"
+                        decoding="async"
                         className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out grayscale-[20%] lg:group-hover/card:scale-[1.03] lg:group-hover/card:grayscale lg:group-hover/card:opacity-[0.35] lg:group-focus-within/card:scale-[1.03] lg:group-focus-within/card:grayscale lg:group-focus-within/card:opacity-[0.35] ${photoClassName ?? 'object-top'}`}
                       />
 
