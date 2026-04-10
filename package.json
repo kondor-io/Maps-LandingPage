@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "node scripts/postbuild-react-snap.mjs",
+    "build:prerender": "vite build && npx react-snap",
     "preview": "vite preview",
     "convert-images": "node scripts/convert-images.mjs"
   },
