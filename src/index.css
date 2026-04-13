@@ -150,7 +150,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-radar-spin,
+  .animate-radar-spin {
+    animation-duration: 12s;
+  }
+
   .animate-btn-shimmer,
   .animate-connector-flow,
   .animate-connector-flow-delayed {
